@@ -2,6 +2,7 @@
 // Created by Isaac Linus on 11/6/26.
 //
 
+#pragma once
 #include "DoubleMatrix.h"
 
 static double mse(const DoubleMatrix &target, const DoubleMatrix &pred) {

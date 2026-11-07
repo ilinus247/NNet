@@ -2,6 +2,7 @@
 // Created by Isaac Linus on 11/6/26.
 //
 
+#pragma once
 #include <cmath>
 
 static double relu(const double x) {
