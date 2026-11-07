@@ -29,6 +29,7 @@ public:
     DoubleMatrix transpose() const;
     DoubleMatrix hadamard(const DoubleMatrix& other) const;
     DoubleMatrix apply(double (*activation)(double)) const;
+    double elementSum() const;
 };
 
 

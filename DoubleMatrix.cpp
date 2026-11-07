@@ -132,3 +132,11 @@ DoubleMatrix DoubleMatrix::apply(double (*activation)(double)) const {
 
     return result;
 }
+
+double DoubleMatrix::elementSum() const {
+    double sum = 0;
+    for (int i = 0; i < m * n; i++) {
+        sum += mat[i];
+    }
+    return sum;
+}
