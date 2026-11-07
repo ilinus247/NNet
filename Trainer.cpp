@@ -3,6 +3,7 @@
 //
 
 #include "Trainer.h"
+#include <iostream>
 
 Trainer::Trainer(const NNet &_net,
                  Dataset &_dataset,
@@ -26,7 +27,7 @@ void Trainer::train(const int epochs, double (*learningRate)(int)) {
     for (int i = 0; i < epochs; i++) {
         const double _learningRate = learningRate(i);
         do {
-            train_step(_learningRate);
+            std::cout << "Loss (epoch " << i + 1 << "): " << train_step(_learningRate) << std::endl;
         } while (!dataset->allDone());
 
         if (dataset->supportsShuffle()) {
@@ -38,7 +39,7 @@ void Trainer::train(const int epochs, double (*learningRate)(int)) {
 void Trainer::train(const int epochs, const double learningRate) {
     for (int i = 0; i < epochs; i++) {
         do {
-            train_step(learningRate);
+            std::cout << "Loss (epoch " << i + 1 << "): " << train_step(learningRate) << std::endl;
         } while (!dataset->allDone());
 
         if (dataset->supportsShuffle()) {
