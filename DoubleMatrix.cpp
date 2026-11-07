@@ -6,7 +6,7 @@
 #include <stdexcept>
 
 
-DoubleMatrix::DoubleMatrix(int rows, int cols) {
+DoubleMatrix::DoubleMatrix(const int rows, const int cols) {
     if (rows <= 0 || cols <= 0) {
         throw std::invalid_argument("Invalid matrix dimensions");
     }
